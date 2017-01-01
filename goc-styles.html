@@ -1,0 +1,470 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+
+<style is="custom-style">
+  :root {
+    /* colors */
+    --goc-primary-color: #10a792;
+    --goc-secondary-color: #00897B;
+    --goc-accent-color: #00BFA5;
+    --goc-background-color: #eee;
+
+    /* Responsive break points */
+    --goc-responsive-large: 820px;
+    --goc-responsive-medium: 640px;
+
+    /* grey pallete */
+    --paper-grey-50: #fafafa;
+    --paper-grey-100: #f5f5f5;
+    --paper-grey-200: #eeeeee;
+    --paper-grey-250: #e7e7e7;
+    --paper-grey-300: #e0e0e0;
+    --paper-grey-350: #d5d5d5;
+    --paper-grey-400: #bdbdbd;
+    --paper-grey-500: #9e9e9e;
+    --paper-grey-600: #757575;
+    --paper-grey-700: #616161;
+    --paper-grey-800: #424242;
+    --paper-grey-900: #212121;
+
+    --paper-red-100: #FFCDD2;
+    --paper-red-400: #EF5350;
+    --paper-red-500: #F44336;
+
+    /* override paper-elements theme */
+    --primary-color: var(--goc-primary-color);
+    --secondary-color: var(--goc-secondary-color);
+
+    /* General */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.06);
+
+    /* mixins */
+    --unselectable: {
+      -moz-user-select: -moz-none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+    }
+
+    --tap-highlight-none: {
+      user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);      
+    }
+  }  
+</style>
+
+<dom-module id="header-layout-styles">
+  <template>
+    <style>
+
+      /* header-layout block */
+      .header-layout {
+        /* make the header-layout fit the size of its container */
+        @apply(--layout-vertical);
+        @apply(--layout-fit);
+        overflow: hidden;
+      }
+
+      .header-layout--with-tabs .header-layout__content {
+        margin-top: 109px;
+      }
+
+      .header-layout__header {
+        background-color: white;
+        border-bottom: 1px solid var(--paper-grey-350);
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      .header-layout__content {
+        @apply(--layout-vertical);
+        @apply(--layout-flex);
+        @apply(--layout-fit);
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
+        margin: 61px auto 0;
+        max-width: 980px;
+        overflow-y: auto;
+        padding: 20px 0;
+        position: relative;
+        width: 100%;
+        /* create a stacking context so all children are below the header */
+        z-index: 0;
+      }
+
+      @media(min-width: 640px) {
+        .header-layout__content{
+          padding: 20px;
+        }
+      }
+
+      /* header-toolbar block */
+      .header-toolbar {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-center);
+        height: 60px;
+        padding: 0 10px;
+      }
+
+      @media(min-with: 640px) {
+        .header-toolbar {
+          padding: 0 16px;
+        }
+      }
+
+      .header-toolbar--secondary {
+        background: var(--goc-primary-color);
+        bottom: 0;
+        color: white;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .header-toolbar--secondary paper-icon-button {
+        color: white;
+      }
+
+      .header-toolbar--secondary:not(.header-toolbar--active) {
+        display: none;
+      }
+
+      .header-toolbar__main-content {
+        @apply(--layout-flex);
+        margin: 0 4px;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      @media(min-width: 640px) {
+        .header-toolbar__main-content {
+          margin: 0 10px;
+        }
+      }
+
+      .header-toolbar__title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .header-toolbar__subtitle {
+        font-size: 14px;
+        margin-top: 2px;
+      }
+
+      .header-toolbar__spinner {
+        display: none;
+        height: 24px;
+        min-width: 24px;
+        padding: 10px 10px 10px 6px;
+        width: 24px;
+        --paper-spinner-color: var(--goc-primary-color);
+      }
+
+      .header-toolbar__spinner[active] {
+        display: inline-block;
+      }
+
+      .header-toolbar paper-icon-button {
+        color: var(--goc-primary-color);
+        display: inline-block;        
+        height: 40px;
+        width: 40px;
+      }
+
+      .header-toolbar .button {
+        margin: 0 8px;
+      }
+
+      @media(min-width:640px) {
+        .header-toolbar button {
+          background: var(--goc-primary-color);
+        }
+      }
+
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="tabs-styles">
+  <template>
+    <style>
+
+      /* tab menu */
+      .tab-menu {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-center);
+        @apply(--unselectable);
+        height: 48px;
+      }
+
+      .tab-menu__item {
+        box-sizing: border-box;
+        color: var(--paper-grey-700);
+        cursor: pointer;
+        font-weight: 600;
+        height: 100%;
+        line-height: 48px;
+        min-width: 130px;
+        padding: 0 16px;
+        position: relative;
+        text-align: center;
+      }
+
+      @media(max-width: 640px) {
+        .tab-menu__item {
+          @apply(--layout-flex);
+        }
+      }
+
+      .tab-menu__item--selected {
+        border-bottom: 3px solid var(--goc-primary-color);
+        color: var(--goc-primary-color);
+      }
+
+      /* tabs content */
+      .tabs__item:not([visible]) {
+        display: none !important;
+      }
+
+      .tabs__item {
+        height: 100%;
+        width: 100%;
+      }
+
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="form-styles">
+  <template>
+    <style>
+      .form {
+        background: white;
+        border-radius: 3px;
+        border: 1px solid var(--paper-grey-350);
+        padding: 10px 15px;
+      }
+
+      @media(max-width: 640px) {
+        .form {
+          border-left: none;
+          border-radius: 0;
+          border-right: none;
+        }
+      }
+
+      .form__item {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+        border-bottom: 1px solid var(--paper-grey-200);
+      }
+
+      .form__item--last {
+        border-bottom: none;
+      }
+
+      .form__label {
+        display: block;
+        margin: 0;
+        min-width: 100px;
+        padding: 12px 0;
+      }
+
+      .form__input {
+        background: transparent;
+        border: none;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-size: 16px;
+        outline: 0;
+        padding: 12px 6px;
+        width: 100%;
+      }
+
+      .form__select {
+        background: 0;
+        border: 0;
+        font-family: sans-serif;
+        font-size: 16px;        
+        outline: 0;
+        padding: 12px 0;
+        width: 100%;
+      }
+
+      .form__item--invalid {
+        color: var(--paper-red-500);
+        border-color: var(--paper-red-400);
+      }
+
+      @media(min-width: 640px) {
+        .form {
+          padding: 10px 20px;
+        }
+
+        .form__label {
+          min-width: 200px;
+        }
+      }
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="button-styles">
+  <template>
+    <style>
+
+      .button {
+        -webkit-appearance: none;
+        background-color: var(--goc-primary-color);        
+        border-radius: 3px;
+        border: 0;
+        box-sizing: border-box;
+        color: white;
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0;
+        min-width: 60px;
+        outline: none;
+        padding: 8px 10px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .button--default {
+        border: 1px solid #bdbdbd;
+        color: initial;
+      }
+
+      .button--secondary {
+        background-color: var(--goc-secondary-color);
+        border: 0;
+        color: white;
+      }
+
+      .button[disabled] {
+        background: var(--paper-grey-200);
+        border: 1px solid var(--paper-grey-350);
+        color: var(--paper-grey-600);
+        cursor: default;
+        pointer-events: none;
+      }
+
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="missing-well-styles">
+  <template>
+    <style>
+
+      .missing-well {
+        margin: 0 auto;
+        max-width: 300px;
+        padding: 60px 20px 20px;
+        position: relative;
+        text-align: center;
+      }
+
+      .missing-well__title {
+        font-weight: normal;
+        margin-bottom: 15px;
+        margin: 0;
+      }
+
+      .missing-well__p {
+        color: var(--paper-grey-700);
+        font-size: 14px;
+        margin: 10px 0;
+      }
+
+      .missing-well a {
+        color: var(--goc-primary-color);
+        text-decoration: none;
+      }
+
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="grid-styles">
+  <template>
+    <style>
+
+      .grid {
+        margin: 0 6px;
+      }
+
+      .grid__item {
+        background: white;
+        border-radius: 2px;
+        border: 1px solid var(--paper-grey-350);
+        box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.06);
+        box-sizing: border-box;
+        color: initial;
+        float: left;
+        margin: 10px 10px 0 0;
+        padding: 20px;
+        text-decoration: none;        
+        width: 100%;
+      }
+
+      a.grid__item:hover {
+        background: #f9f9f9;
+      }
+
+      .grid__title {
+        margin: 10px 0 4px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .grid__p {
+        color: var(--paper-grey-600);
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      @media(min-width: 640px) {
+        .grid__item {
+          width: calc(33.33% - 13.4px);
+          margin: 20px 20px 0 0;
+        }
+
+        .grid__item--last {
+          margin-right: 0;
+        }
+      }
+
+    </style>
+  </template>
+</dom-module>
+
+<dom-module id="link-styles">
+  <template>
+    <style>
+
+      .text-link {
+        color: var(--goc-primary-color);
+        text-decoration: none;
+      }
+
+    </style>
+  </template>
+</dom-module>
