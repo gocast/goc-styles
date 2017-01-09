@@ -125,6 +125,13 @@
         }
       }
 
+      .header-toolbar paper-icon-button {
+        color: var(--goc-primary-color);
+        display: inline-block;        
+        height: 40px;
+        width: 40px;
+      }
+
       .header-toolbar--secondary {
         background: var(--goc-primary-color);
         bottom: 0;
@@ -136,7 +143,7 @@
       }
 
       .header-toolbar--secondary paper-icon-button {
-        color: white;
+        color: white !important;
       }
 
       .header-toolbar--secondary:not(.header-toolbar--active) {
@@ -177,13 +184,6 @@
 
       .header-toolbar__spinner[active] {
         display: inline-block;
-      }
-
-      .header-toolbar paper-icon-button {
-        color: var(--goc-primary-color);
-        display: inline-block;        
-        height: 40px;
-        width: 40px;
       }
 
       .header-toolbar .button {
