@@ -543,10 +543,20 @@
     <style>
 
       .headline {
+        font-size: 18px;
+        font-weight: normal;
+        margin: 22px 0 10px 0;
+      }
+
+      @media(max-width: 640px) {
+        .headline {
+          margin-left: 20px;
+          margin-right: 20px;
+        }
       }
 
       .uppercase {
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 600;
         text-transform: uppercase;
       }
@@ -557,9 +567,9 @@
 
       .caption {
         color: var(--paper-grey-700);
-        font-size: 14px;
+        font-size: 13px;
         font-weight: normal;
-        line-height: 20px;
+        line-height: 18px;
         margin: 0;
       }
 
