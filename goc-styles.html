@@ -51,7 +51,7 @@
       -webkit-user-select: none;
       -o-user-select: none;
       user-select: none;
-    }
+    };
 
     --tap-highlight-none: {
       user-drag: none;
@@ -61,7 +61,7 @@
       -webkit-user-drag: none;
       -webkit-user-select: none;
       -webkit-tap-highlight-color: rgba(255, 255, 255, 0);      
-    }
+    };
   }  
 </style>
 
@@ -72,8 +72,8 @@
       /* header-layout block */
       .header-layout {
         /* make the header-layout fit the size of its container */
-        @apply(--layout-vertical);
-        @apply(--layout-fit);
+        @apply --layout-vertical;
+        @apply --layout-fit;
         overflow: hidden;
       }
 
@@ -91,9 +91,9 @@
       }
 
       .header-layout__content {
-        @apply(--layout-vertical);
-        @apply(--layout-flex);
-        @apply(--layout-fit);
+        @apply --layout-vertical;
+        @apply --layout-flex;
+        @apply --layout-fit;
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
         margin: 61px auto 0;
@@ -114,8 +114,8 @@
 
       /* header-toolbar block */
       .header-toolbar {
-        @apply(--layout-horizontal);
-        @apply(--layout-center-center);
+        @apply --layout-horizontal;
+        @apply --layout-center-center;
         height: 60px;
         padding: 0 10px;
       }
@@ -152,7 +152,7 @@
       }
 
       .header-toolbar__main-content {
-        @apply(--layout-flex);
+        @apply --layout-flex;
         margin: 0 4px;
         overflow: hidden;
         white-space: nowrap;
@@ -207,9 +207,9 @@
 
       /* tab menu */
       .tab-menu {
-        @apply(--layout-horizontal);
-        @apply(--layout-center-center);
-        @apply(--unselectable);
+        @apply --layout-horizontal;
+        @apply --layout-center-center;
+        @apply --unselectable;
         height: 48px;
       }
 
@@ -228,7 +228,7 @@
 
       @media(max-width: 640px) {
         .tab-menu__item {
-          @apply(--layout-flex);
+          @apply --layout-flex;
         }
       }
 
@@ -270,8 +270,8 @@
       }
 
       .form__item {
-        @apply(--layout-horizontal);
-        @apply(--layout-center);
+        @apply --layout-horizontal;
+        @apply --layout-center;
         border-bottom: 1px solid var(--paper-grey-200);
       }
 
