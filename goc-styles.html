@@ -1,69 +1,71 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 
-<style is="custom-style">
-  :root {
-    /* colors */
-    --goc-primary-color: #10a792;
-    --goc-secondary-color: #00897B;
-    --goc-accent-color: #00BFA5;
-    --goc-background-color: #eee;
+<custom-style>
+  <style is="custom-style">
+    html {
+      /* colors */
+      --goc-primary-color: #10a792;
+      --goc-secondary-color: #00897B;
+      --goc-accent-color: #00BFA5;
+      --goc-background-color: #eee;
 
-    /* Responsive break points */
-    --goc-responsive-large: 820px;
-    --goc-responsive-medium: 640px;
+      /* Responsive break points */
+      --goc-responsive-large: 820px;
+      --goc-responsive-medium: 640px;
 
-    /* grey pallete */
-    --paper-grey-50: #fafafa;
-    --paper-grey-100: #f5f5f5;
-    --paper-grey-200: #eeeeee;
-    --paper-grey-250: #e7e7e7;
-    --paper-grey-300: #e0e0e0;
-    --paper-grey-350: #d5d5d5;
-    --paper-grey-400: #bdbdbd;
-    --paper-grey-500: #9e9e9e;
-    --paper-grey-600: #757575;
-    --paper-grey-700: #616161;
-    --paper-grey-800: #424242;
-    --paper-grey-900: #212121;
+      /* grey pallete */
+      --paper-grey-50: #fafafa;
+      --paper-grey-100: #f5f5f5;
+      --paper-grey-200: #eeeeee;
+      --paper-grey-250: #e7e7e7;
+      --paper-grey-300: #e0e0e0;
+      --paper-grey-350: #d5d5d5;
+      --paper-grey-400: #bdbdbd;
+      --paper-grey-500: #9e9e9e;
+      --paper-grey-600: #757575;
+      --paper-grey-700: #616161;
+      --paper-grey-800: #424242;
+      --paper-grey-900: #212121;
 
-    --paper-red-100: #FFCDD2;
-    --paper-red-400: #EF5350;
-    --paper-red-500: #F44336;
+      --paper-red-100: #FFCDD2;
+      --paper-red-400: #EF5350;
+      --paper-red-500: #F44336;
 
-    /* set paper-elements vars */
-    --primary-color: var(--goc-primary-color);
-    --secondary-color: var(--goc-secondary-color);
-    --paper-toggle-button-unchecked-ink-color: var(--goc-primary-color);
-    --paper-toggle-button-checked-bar-color: var(--goc-primary-color);
-    --paper-toggle-button-checked-button-color: var(--goc-primary-color);
-    --paper-toggle-button-checked-ink-color: var(--goc-primary-color);
-    /* set other elements vars */
-    --selectable-item-color: var(--goc-primary-color);
+      /* set paper-elements vars */
+      --primary-color: var(--goc-primary-color);
+      --secondary-color: var(--goc-secondary-color);
+      --paper-toggle-button-unchecked-ink-color: var(--goc-primary-color);
+      --paper-toggle-button-checked-bar-color: var(--goc-primary-color);
+      --paper-toggle-button-checked-button-color: var(--goc-primary-color);
+      --paper-toggle-button-checked-ink-color: var(--goc-primary-color);
+      /* set other elements vars */
+      --selectable-item-color: var(--goc-primary-color);
 
-    /* General */
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.06);
+      /* General */
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.06);
 
-    /* mixins */
-    --unselectable: {
-      -moz-user-select: -moz-none;
-      -khtml-user-select: none;
-      -webkit-user-select: none;
-      -o-user-select: none;
-      user-select: none;
-    };
+      /* mixins */
+      --unselectable: {
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      };
 
-    --tap-highlight-none: {
-      user-drag: none;
-      user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -webkit-user-drag: none;
-      -webkit-user-select: none;
-      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);      
-    };
-  }  
-</style>
+      --tap-highlight-none: {
+        user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);      
+      };
+    }  
+  </style>
+</custom-style>
 
 <dom-module id="header-layout-styles">
   <template>
