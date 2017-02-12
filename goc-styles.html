@@ -503,6 +503,37 @@
           border-right: none;
         }
       }
+
+      .box__tabs {
+        @apply --layout-horizontal;
+        @apply --layout-center-center;
+        @apply --unselectable;
+        border-bottom: 1px solid var(--paper-grey-350);
+        width: 100%;
+      }
+
+      .box__tab-item {
+        border-bottom: 3px solid transparent;
+        color: var(--paper-grey-700);
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 12px 10px 10px;
+        position: relative;
+        text-align: center;
+      }
+
+      @media(max-width: 640px) {
+        .box__tab-item {
+          @apply --layout-flex;
+        }
+      }
+
+      .box__tab-item--selected {
+        border-bottom: 3px solid var(--goc-primary-color);
+        color: var(--goc-primary-color);
+      }
+
     </style>
   </template>
 </dom-module>
