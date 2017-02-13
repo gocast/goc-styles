@@ -516,7 +516,14 @@
       .box__row {
         border-bottom: 1px solid var(--paper-grey-250);
         box-sizing: border-box;
-        padding: 10px;
+        padding: 16px;
+      }
+
+      @media(min-width: 640px) {
+        .box__row {
+          margin: 0 16px;
+          padding: 16px 0;
+        }
       }
 
       .box__row--last {
