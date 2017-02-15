@@ -639,6 +639,36 @@
   </template>
 </dom-module>
 
+<dom-module id="nav-styles">
+  <template>
+    <style>
+
+      .nav {
+        @apply --layout-horizontal;
+        @apply --layout-center;
+        padding: 0 0 20px 0;
+      }
+
+      .nav__item {
+        font-size: 18px;
+        @apply --layout-flex;
+      }
+
+      .text-link {
+        color: var(--goc-primary-color);
+        text-decoration: none;
+      }
+
+      @media (max-width: 640px) {
+        .nav {
+          padding: 0 16px 20px;
+        }
+      }
+
+    </style>
+  </template>
+</dom-module>
+
 <dom-module id="link-styles">
   <template>
     <style>
