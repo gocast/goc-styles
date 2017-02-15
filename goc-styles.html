@@ -189,14 +189,8 @@
         display: inline-block;
       }
 
-      .header-toolbar .button {
+      .header-toolbar .btn {
         margin: 0 8px;
-      }
-
-      @media(min-width:640px) {
-        .header-toolbar .button {
-          background: var(--goc-primary-color);
-        }
       }
 
     </style>
@@ -381,6 +375,19 @@
         color: white;
       }
 
+      .btn--transparent touch-item {
+        color: var(--goc-primary-color);
+        text-transform: uppercase;
+        background: transparent;
+        border: 0;
+      }
+
+      .btn--transparent touch-item[mouse-over] {
+        background: rgba(0, 0, 0, 0.06);
+        color: var(--goc-primary-color);
+        box-shadow: none;
+      }
+
       /* disabled */
       .btn[disabled] {
         pointer-events: none;
@@ -477,8 +484,10 @@
   <template>
     <style>
 
-      .grid {
-        margin: 0 6px;
+      @media(max-width: 640px) {
+        .grid {
+          margin: 0 6px;
+        }
       }
 
       .grid__item {
