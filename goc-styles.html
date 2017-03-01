@@ -61,9 +61,9 @@
         -ms-user-select: none;
         -webkit-user-drag: none;
         -webkit-user-select: none;
-        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);      
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
       };
-    }  
+    }
   </style>
 </custom-style>
 
@@ -254,6 +254,11 @@
         padding: 10px 15px;
       }
 
+      .form--white-bg {
+        border: 1px solid var(--paper-grey-300);
+        border-radius: 4px;
+      }
+
       @media(min-width: 640px) {
         .form {
           padding: 10px 20px;
@@ -271,11 +276,13 @@
       }
 
       .form__label {
+        @apply --layout-self-start;
         margin: 0;
         min-width: 100px;
         padding: 12px 0;
       }
 
+      .form__textarea,
       .form__input {
         @apply --layout-flex;
         background: transparent;
@@ -285,14 +292,18 @@
         font-size: 16px;
         outline: 0;
         padding: 12px 6px;
-        width: 50%;
+        min-width: 50%;
+      }
+
+      .form__textarea {
+        min-height: 100px;
       }
 
       .form__select {
         background: 0;
         border: 0;
         font-family: sans-serif;
-        font-size: 16px;        
+        font-size: 16px;
         outline: 0;
         padding: 12px 0;
         width: 100%;
@@ -499,7 +510,7 @@
         color: initial;
         float: left;
         margin: 0 10px 10px 0;
-        text-decoration: none;        
+        text-decoration: none;
         width: 100%;
       }
 
