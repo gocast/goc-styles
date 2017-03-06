@@ -2,7 +2,7 @@
   "name": "gocast-styles",
   "main": "gocast-styles.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0",
+    "polymer": "git@github.com:Polymer/polymer#v2.0.0-rc.1",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#2.0-preview"
   }
 }
