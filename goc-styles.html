@@ -334,6 +334,104 @@
   </template>
 </dom-module>
 
+<dom-module id="form-v1-styles">
+  <template>
+    <style>
+      .form {
+        padding: 10px 15px;
+      }
+
+      @media(min-width: 640px) {
+        .form {
+          padding: 10px 20px;
+        }
+      }
+
+      .form__item {
+        border-bottom: 1px solid var(--paper-grey-200);
+        padding: 2px 0;
+      }
+
+      .form__item--last {
+        border-bottom: none;
+      }
+
+      .form__input-container {
+        @apply --layout-horizontal;
+        @apply --layout-center;
+      }
+
+
+      .form__label {
+        @apply --layout-self-start;
+        margin: 0;
+        min-width: 100px;
+        padding: 10px 0;
+      }
+
+      .form__note {
+        color: var(--paper-grey-600);
+        font-size: 14px;
+        padding-top: 2px;
+      }
+
+      @media(min-width: 640px) {
+        .form__label {
+          min-width: 220px;
+          width: 220px;
+        }
+
+        .form__note {
+          padding-left: 228px;
+        }
+      }
+
+      .form__textarea,
+      .form__input {
+        @apply --layout-flex;
+        background: transparent;
+        border: none;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-size: 16px;
+        outline: 0;
+        padding: 10px 8px;
+        min-width: 50%;
+      }
+
+      .form__textarea {
+        min-height: 100px;
+      }
+
+      .form__select {
+        background: 0;
+        border: 0;
+        font-family: sans-serif;
+        font-size: 16px;
+        outline: 0;
+        padding: 10px 0;
+        width: 100%;
+      }
+
+      .form__item--invalid {
+        color: var(--paper-red-500);
+        border-color: var(--paper-red-400);
+      }
+
+      .form__item paper-toggle-button {
+        padding-left: 8px;
+      }
+
+      @media(max-width: 640px) {
+        .form__item paper-toggle-button {
+          margin-left: auto;
+        }
+      }
+
+    </style>
+  </template>
+</dom-module>
+
 <dom-module id="btn-styles">
   <template>
     <style>
